@@ -1,1 +1,1 @@
-# chk-disque-icinga-plugin
+# disque-info-nagios-plugin
