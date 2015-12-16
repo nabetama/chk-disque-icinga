@@ -1,0 +1,1 @@
+# chk-disque-icinga-plugin
