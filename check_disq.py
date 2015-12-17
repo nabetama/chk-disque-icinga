@@ -51,4 +51,4 @@ np.nagios_exit(
     code,
     messages,
 )
-    
+
