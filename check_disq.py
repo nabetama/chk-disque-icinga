@@ -23,9 +23,9 @@ except:
 class Disque(object):
     def __init__(self):
         self.__info = client.execute_command('INFO')
-        self.create_prop()
+        self.create_properties()
 
-    def create_prop(self):
+    def create_properties(self):
         for k, v in self.__info.iteritems():
             self.__dict__[k] = v
 
