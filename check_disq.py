@@ -31,19 +31,23 @@ class Disque(object):
 
 disque = Disque()
 
+info_properties = [
+    "used_memory_rate",
+    "connected_clients",
+    "client_longest_output_list",
+    "client_biggest_input_buf",
+    "client_biggest_input_buf",
+    "rejected_connections",
+    "total_commands_processed",
+    "total_connections_received",
+    "used_memory_human",
+    "used_memory_peak_human",
+    "mem_fragmentation_ratio",
+    "instantaneous_ops_per_sec",
+]
 
-np.add_perfdata("used_memory_rate",           disque.used_memory)
-np.add_perfdata("connected_clients",          disque.connected_clients)
-np.add_perfdata("client_longest_output_list", disque.client_longest_output_list)
-np.add_perfdata("client_biggest_input_buf",   disque.client_biggest_input_buf)
-np.add_perfdata("client_biggest_input_buf",   disque.client_biggest_input_buf)
-np.add_perfdata("rejected_connections",       disque.rejected_connections)
-np.add_perfdata("total_commands_processed",   disque.total_commands_processed)
-np.add_perfdata("total_connections_received", disque.total_connections_received)
-np.add_perfdata("used_memory_human",          disque.used_memory_human)
-np.add_perfdata("used_memory_peak_human",     disque.used_memory_peak_human)
-np.add_perfdata("mem_fragmentation_ratio",    disque.mem_fragmentation_ratio)
-np.add_perfdata("instantaneous_ops_per_sec",  disque.instantaneous_ops_per_sec)
+for info_property in info_properties:
+    np.add_perfdata(info_propert, getattr(disque, info_property))
 
 code, messages = np.check_messages()
 
